@@ -1,5 +1,4 @@
 import random
-
 class HangmanGame:
     def __init__(self, words):
         self.words = words
@@ -36,19 +35,3 @@ class HangmanGame:
     
     def check_loss(self):
         return self.guesses_remaining == 0
-
-def main():
-    words = ["python", "java", "javascript", "ruby", "csharp", "php"]
-    game = HangmanGame(words)
-    game.select_random_word()
-    print("Welcome to Hangman!")
-    
-    while not game.check_win() and not game.check_loss():
-        print("Word to guess: ", game.display_word())
-        print("Guesses remaining: ", game.guesses_remaining)
-        guess = input("Enter a letter: ").lower()
-        result = game.make_guess(guess)
-        print(result)
-    
-if __name__ == "__main__":
-    main()
